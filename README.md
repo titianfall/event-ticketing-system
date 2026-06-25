@@ -108,7 +108,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 
 ## Project Status
 
-- [ ] Milestone 1 프로젝트 초기화 (진행 중: Issue #1)
+- [x] Milestone 1 프로젝트 초기화
 - [ ] Milestone 2 Backend 기초
 - [ ] Milestone 3 Frontend 기초
 - [ ] Milestone 4 로컬 개발 환경과 JPA
@@ -129,6 +129,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 
 - [로드맵 인덱스](docs/roadmap.md)
 - [로드맵 상세 디렉토리](docs/roadmap/)
+- [최종 디렉토리 구조](docs/project-structure.md)
 
 ## 실행 방법
 

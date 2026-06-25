@@ -23,8 +23,9 @@
 
 ## 현재 위치
 
-- 진행 중: Milestone 1. 프로젝트 초기화
-- 진행 중 이슈: Issue #1. Git Repository 생성
+- 완료: Milestone 1. 프로젝트 초기화
+- 다음 진행: Milestone 2. Backend 기초
+- 다음 이슈: Issue #3. Spring Boot Backend 생성
 
 ## 추천 커밋 메시지
 
