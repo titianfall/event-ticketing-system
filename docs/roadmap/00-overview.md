@@ -35,7 +35,7 @@
 
 ## 디렉토리 생성 원칙
 
-- 최종 디렉토리 구조는 Issue #2에서 별도 문서로 기록한다.
+- 최종 디렉토리 구조는 [project-structure.md](../project-structure.md)에 목표로 기록한다.
 - 실제 디렉토리와 파일은 해당 이슈를 진행할 때 만든다.
 - 아직 사용하지 않는 빈 디렉토리를 미리 만들기 위해 `.gitkeep`을 남발하지 않는다.
 - 예를 들어 `backend/`는 Backend 생성 이슈에서, `frontend/`는 Frontend 생성 이슈에서, `.github/workflows/`는 첫 CI 이슈에서 만든다.
