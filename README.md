@@ -133,4 +133,8 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 
 ## 실행 방법
 
-아직 애플리케이션 코드는 생성하지 않았습니다. 실행 방법은 Backend, Frontend, Docker Compose 마일스톤을 진행하면서 단계적으로 추가합니다.
+### Backend 실행
+
+```powershell
+cd backend
+.\gradlew.bat bootRun
