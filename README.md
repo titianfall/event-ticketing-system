@@ -109,7 +109,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 ## Project Status
 
 - [x] Milestone 1 프로젝트 초기화
-- [ ] Milestone 2 Backend 기초
+- [x] Milestone 2 Backend 기초
 - [ ] Milestone 3 Frontend 기초
 - [ ] Milestone 4 로컬 개발 환경과 JPA
 - [ ] Milestone 5 회원과 인증
