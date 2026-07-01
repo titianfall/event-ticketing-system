@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -23,15 +24,14 @@ class TicketingApplicationTests {
 
 	@Test
 	void healthReturnsUp() throws Exception {
-		// 일반 import 시
-		// MockMvcRequestBuilders.get
-		// MockMvcResultMatchers.status().isOk()
-		// MockMvcResultMatchers.jsonPath().value()
+		// given
+		String healthCheckPath = "/api/health";
 
-		// import static *
-		// 테스트 내부에서 url 요청 흉내
-		// 응답 상태가 200인지, JSON 안의 status 값이 UP인지 확인
-		mockMvc.perform(get("/api/health")) 
+		// when
+		ResultActions resultActions = mockMvc.perform(get(healthCheckPath));
+
+		// then
+		resultActions
 			.andExpect(status().isOk())
 			.andExpect(jsonPath("$.status").value("UP"));
 	}	
