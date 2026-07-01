@@ -24,11 +24,13 @@
 ## 현재 위치
 
 - 완료: Milestone 1. 프로젝트 초기화
-- 다음 진행: Milestone 2. Backend 기초
-- 다음 이슈: Issue #3. Spring Boot Backend 생성
+- 완료: Milestone 2. Backend 기초
+- 진행 중: Milestone 3. Frontend 기초
+- 완료 이슈: Issue #6. React Frontend 생성
+- 다음 이슈: Issue #7. Frontend npm scripts와 테스트 기초
 
 ## 추천 커밋 메시지
 
 ```bash
-chore: initialize project repository
+test: add frontend test script
 ```

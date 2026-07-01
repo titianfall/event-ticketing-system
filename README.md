@@ -127,6 +127,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 
 ## 문서
 
+- [에이전트 작업 규칙](AGENTS.md)
 - [로드맵 인덱스](docs/roadmap.md)
 - [로드맵 상세 디렉토리](docs/roadmap/)
 - [최종 디렉토리 구조](docs/project-structure.md)
