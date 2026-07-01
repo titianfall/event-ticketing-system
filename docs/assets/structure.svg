@@ -1,0 +1,69 @@
+<svg width="1060" height="700" viewBox="0 0 1060 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ar" markerWidth="11" markerHeight="11" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#111827"/>
+    </marker>
+    <style>
+      .header { font: 700 28px 'Malgun Gothic', Arial, sans-serif; fill: #111827; }
+      .lane { font: 700 16px 'Malgun Gothic', Arial, sans-serif; fill: #475569; }
+      .boxlbl { font: 700 18px 'Malgun Gothic', Arial, sans-serif; fill: #111827; text-anchor: middle; }
+      .title { font: 700 18px 'Malgun Gothic', Arial, sans-serif; fill: #111827; }
+      .brand { font: 700 21px 'Malgun Gothic', Arial, sans-serif; fill: #111827; }
+      .oval { font: 700 15px 'Malgun Gothic', Arial, sans-serif; fill: #ffffff; text-anchor: middle; }
+      .small { font: 600 14px 'Malgun Gothic', Arial, sans-serif; fill: #334155; text-anchor: middle; }
+      .smaller { font: 600 13px 'Malgun Gothic', Arial, sans-serif; fill: #334155; text-anchor: middle; }
+      .note { font: 500 14px 'Malgun Gothic', Arial, sans-serif; fill: #64748b; text-anchor: middle; }
+      .codeGray { font: 600 14px Consolas, 'Malgun Gothic', monospace; fill: #64748b; }
+      .codeBlue { font: 700 15px Consolas, 'Malgun Gothic', monospace; fill: #1d4ed8; }
+    </style>
+  </defs>
+
+  <rect width="1060" height="700" fill="#ffffff"/>
+  <text x="40" y="52" class="header">Frontend / Backend 구조</text>
+
+  <rect x="24" y="72" width="1012" height="268" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <rect x="24" y="384" width="1012" height="300" rx="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="40" y="128" width="150" height="188" rx="6" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+  <rect x="470" y="128" width="540" height="180" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="2.4"/>
+  <rect x="40" y="452" width="150" height="200" rx="6" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+  <rect x="360" y="430" width="660" height="240" rx="6" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-dasharray="8 6"/>
+  <rect x="540" y="478" width="460" height="176" rx="6" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+  <ellipse cx="590" cy="206" rx="80" ry="32" fill="#2563eb"/>
+  <line x1="670" y1="206" x2="720" y2="206" stroke="#111827" stroke-width="2.4" marker-end="url(#ar)"/>
+  <ellipse cx="800" cy="206" rx="80" ry="32" fill="#2563eb"/>
+  <ellipse cx="660" cy="546" rx="84" ry="30" fill="#15914f"/>
+  <line x1="660" y1="576" x2="660" y2="590" stroke="#111827" stroke-width="2.4" marker-end="url(#ar)"/>
+  <ellipse cx="660" cy="616" rx="94" ry="30" fill="#d97706"/>
+  <line x1="190" y1="188" x2="508" y2="188" stroke="#111827" stroke-width="2.4" marker-end="url(#ar)"/>
+  <line x1="470" y1="296" x2="190" y2="296" stroke="#111827" stroke-width="2.4" marker-end="url(#ar)"/>
+  <line x1="190" y1="546" x2="574" y2="546" stroke="#111827" stroke-width="2.4" marker-end="url(#ar)"/>
+  <line x1="566" y1="616" x2="190" y2="616" stroke="#111827" stroke-width="2.4" marker-end="url(#ar)"/>
+  <rect x="300" y="128" width="120" height="180" rx="6" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2.4"/>
+  <rect x="382" y="486" width="118" height="156" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2.4"/>
+  <text x="44" y="106" class="lane">① Frontend — React SPA (Vite dev server)</text>
+  <text x="115" y="228" class="boxlbl">웹 브라우저</text>
+  <text x="492" y="158" class="title">React 앱</text>
+  <image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNjFEQUZCIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+UmVhY3Q8L3RpdGxlPjxwYXRoIGQ9Ik0xNC4yMyAxMi4wMDRhMi4yMzYgMi4yMzYgMCAwIDEtMi4yMzUgMi4yMzYgMi4yMzYgMi4yMzYgMCAwIDEtMi4yMzYtMi4yMzYgMi4yMzYgMi4yMzYgMCAwIDEgMi4yMzUtMi4yMzYgMi4yMzYgMi4yMzYgMCAwIDEgMi4yMzYgMi4yMzZ6bTIuNjQ4LTEwLjY5Yy0xLjM0NiAwLTMuMTA3Ljk2LTQuODg4IDIuNjIyLTEuNzgtMS42NTMtMy41NDItMi42MDItNC44ODctMi42MDItLjQxIDAtLjc4My4wOTMtMS4xMDYuMjc4LTEuMzc1Ljc5My0xLjY4MyAzLjI2NC0uOTczIDYuMzY1QzEuOTggOC45MTcgMCAxMC40MiAwIDEyLjAwNGMwIDEuNTkgMS45OSAzLjA5NyA1LjA0MyA0LjAzLS43MDQgMy4xMTMtLjM5IDUuNTg4Ljk4OCA2LjM4LjMyLjE4Ny42OS4yNzUgMS4xMDIuMjc1IDEuMzQ1IDAgMy4xMDctLjk2IDQuODg4LTIuNjI0IDEuNzggMS42NTQgMy41NDIgMi42MDMgNC44ODcgMi42MDMuNDEgMCAuNzgzLS4wOSAxLjEwNi0uMjc1IDEuMzc0LS43OTIgMS42ODMtMy4yNjMuOTczLTYuMzY1QzIyLjAyIDE1LjA5NiAyNCAxMy41OSAyNCAxMi4wMDRjMC0xLjU5LTEuOTktMy4wOTctNS4wNDMtNC4wMzIuNzA0LTMuMTEuMzktNS41ODctLjk4OC02LjM4LS4zMTgtLjE4NC0uNjg4LS4yNzctMS4wOTItLjI3OHptLS4wMDUgMS4wOXYuMDA2Yy4yMjUgMCAuNDA2LjA0NC41NTguMTI3LjY2Ni4zODIuOTU1IDEuODM1LjczIDMuNzA0LS4wNTQuNDYtLjE0Mi45NDUtLjI1IDEuNDQtLjk2LS4yMzYtMi4wMDYtLjQxNy0zLjEwNy0uNTM0LS42Ni0uOTA1LTEuMzQ1LTEuNzI3LTIuMDM1LTIuNDQ3IDEuNTkyLTEuNDggMy4wODctMi4yOTIgNC4xMDUtMi4yOTV6bS05Ljc3LjAyYzEuMDEyIDAgMi41MTQuODA4IDQuMTEgMi4yOC0uNjg2LjcyLTEuMzcgMS41MzctMi4wMiAyLjQ0Mi0xLjEwNy4xMTctMi4xNTQuMjk4LTMuMTEzLjUzOC0uMTEyLS40OS0uMTk1LS45NjQtLjI1NC0xLjQyLS4yMy0xLjg2OC4wNTQtMy4zMi43MTQtMy43MDcuMTktLjA5LjQtLjEyNy41NjMtLjEzMnptNC44ODIgMy4wNWMuNDU1LjQ2OC45MS45OTIgMS4zNiAxLjU2NC0uNDQtLjAyLS44OS0uMDM0LTEuMzQ1LS4wMzQtLjQ2IDAtLjkxNS4wMS0xLjM2LjAzNC40NC0uNTcyLjg5NS0xLjA5NiAxLjM0NS0xLjU2NXpNMTIgOC4xYy43NCAwIDEuNDc3LjAzNCAyLjIwMi4wOTMuNDA2LjU4Mi44MDIgMS4yMDMgMS4xODMgMS44Ni4zNzIuNjQuNzEgMS4yOSAxLjAxOCAxLjk0Ni0uMzA4LjY1NS0uNjQ2IDEuMzEtMS4wMTMgMS45NS0uMzguNjYtLjc3MyAxLjI4OC0xLjE4IDEuODctLjcyOC4wNjMtMS40NjYuMDk4LTIuMjEuMDk4LS43NCAwLTEuNDc3LS4wMzUtMi4yMDItLjA5My0uNDA2LS41ODItLjgwMi0xLjIwNC0xLjE4My0xLjg2LS4zNzItLjY0LS43MS0xLjI5LTEuMDE4LTEuOTQ2LjMwMy0uNjU3LjY0Ni0xLjMxMyAxLjAxMy0xLjk1NC4zOC0uNjYuNzczLTEuMjg2IDEuMTgtMS44NjguNzI4LS4wNjQgMS40NjYtLjA5OCAyLjIxLS4wOTh6bS0zLjYzNS4yNTRjLS4yNC4zNzctLjQ4Ljc2My0uNzA0IDEuMTYtLjIyNS4zOS0uNDM1Ljc4Mi0uNjM1IDEuMTc0LS4yNjUtLjY1Ni0uNDktMS4zMS0uNjc2LTEuOTQ3LjY0LS4xNSAxLjMxNS0uMjgzIDIuMDE1LS4zODZ6bTcuMjYgMGMuNjk1LjEwMyAxLjM2NS4yMyAyLjAwNi4zODctLjE4LjYzMi0uNDA1IDEuMjgyLS42NiAxLjkzMy0uMi0uMzktLjQxLS43ODMtLjY0LTEuMTc0LS4yMjUtLjM5Mi0uNDY1LS43NzQtLjcwNS0xLjE0NnptMy4wNjMuNjc1Yy40ODQuMTUuOTQ0LjMxNyAxLjM3NS40OTggMS43MzIuNzQgMi44NTIgMS43MDggMi44NTIgMi40NzYtLjAwNS43NjgtMS4xMjUgMS43NC0yLjg1NyAyLjQ3NS0uNDIuMTgtLjg4LjM0Mi0xLjM1NS40OTMtLjI4LS45NTgtLjY0Ni0xLjk1Ni0xLjEtMi45OC40NS0xLjAxNy44MS0yLjAxIDEuMDg1LTIuOTY0em0tMTMuMzk1LjAwNGMuMjc4Ljk2LjY0NSAxLjk1NyAxLjEgMi45OC0uNDUgMS4wMTctLjgxMiAyLjAxLTEuMDg2IDIuOTY0LS40ODQtLjE1LS45NDQtLjMxOC0xLjM3LS41LTEuNzMyLS43MzctMi44NTItMS43MDYtMi44NTItMi40NzQgMC0uNzY4IDEuMTItMS43NDIgMi44NTItMi40NzYuNDItLjE4Ljg4LS4zNDIgMS4zNTYtLjQ5NHptMTEuNjc4IDQuMjhjLjI2NS42NTcuNDkgMS4zMTIuNjc2IDEuOTQ4LS42NC4xNTctMS4zMTYuMjktMi4wMTYuMzkuMjQtLjM3NS40OC0uNzYyLjcwNS0xLjE1OC4yMjUtLjM5LjQzNS0uNzg4LjYzNi0xLjE4em0tOS45NDUuMDJjLjIuMzkyLjQxLjc4My42NCAxLjE3NS4yMy4zOS40NjUuNzcyLjcwNSAxLjE0My0uNjk1LS4xMDItMS4zNjUtLjIzLTIuMDA2LS4zODYuMTgtLjYzLjQwNi0xLjI4Mi42Ni0xLjkzM3pNMTcuOTIgMTYuMzJjLjExMi40OTMuMi45NjguMjU0IDEuNDIzLjIzIDEuODY4LS4wNTQgMy4zMi0uNzE0IDMuNzA4LS4xNDcuMDktLjMzOC4xMjgtLjU2My4xMjgtMS4wMTIgMC0yLjUxNC0uODA3LTQuMTEtMi4yOC42ODYtLjcyIDEuMzctMS41MzYgMi4wMi0yLjQ0IDEuMTA3LS4xMTggMi4xNTQtLjMgMy4xMTMtLjU0em0tMTEuODMuMDFjLjk2LjIzNCAyLjAwNi40MTUgMy4xMDcuNTMyLjY2LjkwNSAxLjM0NSAxLjcyNyAyLjAzNSAyLjQ0Ni0xLjU5NSAxLjQ4My0zLjA5MiAyLjI5NS00LjExIDIuMjk1LS4yMi0uMDA1LS40MDYtLjA1LS41NTMtLjEzMi0uNjY2LS4zOC0uOTU1LTEuODM0LS43My0zLjcwMy4wNTQtLjQ2LjE0Mi0uOTQ0LjI1LTEuNDM4em00LjU2LjY0Yy40NC4wMi44OS4wMzQgMS4zNDUuMDM0LjQ2IDAgLjkxNS0uMDEgMS4zNi0uMDM0LS40NC41NzItLjg5NSAxLjA5NS0xLjM0NSAxLjU2NS0uNDU1LS40Ny0uOTEtLjk5My0xLjM2LTEuNTY1eiIvPjwvc3ZnPg==" x="946" y="138" width="54" height="54"/>
+  <text x="590" y="212" class="oval">main.tsx</text>
+  <text x="800" y="212" class="oval">App.tsx</text>
+  <text x="560" y="280" class="note">createRoot() → &lt;App /&gt; 컴포넌트 렌더링</text>
+  <image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNjQ2Q0ZGIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+Vml0ZTwvdGl0bGU+PHBhdGggZD0iTTEzLjA1NiAyMy4yMzhhLjU3LjU3IDAgMCAxLTEuMDItLjM1NXYtNS4yMDJjMC0uNjMtLjUxMi0xLjE0My0xLjE0NC0xLjE0M0g1LjE0OGEuNTcuNTcgMCAwIDEtLjQ2NC0uOTAzbDMuNzc3LTUuMjljLjU0LS43NTMgMC0xLjgwNC0uOTMtMS44MDRILjU3YS41NzQuNTc0IDAgMCAxLS41NDMtLjc0Ni42LjYgMCAwIDEgLjA4LS4xNTdMNS4wMDguNzhhLjU3LjU3IDAgMCAxIC40NjctLjI0aDE0LjU4OWEuNTcuNTcgMCAwIDEgLjQ2Ni45MDNsLTMuNzc4IDUuMjljLS41NC43NTUgMCAxLjgwNi45MyAxLjgwNmg1Ljc0NWMuMjM4IDAgLjQyNC4xMzguNTEzLjMyMmEuNTYuNTYgMCAwIDEtLjA2My42MDN6Ii8+PC9zdmc+" x="340" y="146" width="40" height="40"/>
+  <text x="360" y="232" class="boxlbl">Vite 개발</text>
+  <text x="360" y="256" class="boxlbl">서버</text>
+  <text x="245" y="177" class="small">localhost:5173</text>
+  <text x="245" y="286" class="smaller">HTML + JS 번들 (응답)</text>
+  <text x="44" y="418" class="lane">② Backend — REST API (Spring Boot · 내장 Tomcat)</text>
+  <image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNkRCMzNGIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+U3ByaW5nIEJvb3Q8L3RpdGxlPjxwYXRoIGQ9Im0yMy42OTMgMTAuNzA1OC00LjczLTguMTg0NGMtLjQwOTQtLjcxMDYtMS40MTY2LTEuMjk0Mi0yLjI0MDItMS4yOTQySDcuMjcyNWMtLjgxOSAwLTEuODMwOC41ODM2LTIuMjQwMiAxLjI5NDJMLjMwNyAxMC43MDU4Yy0uNDA5NS43MTA2LS40MDk1IDEuODczIDAgMi41ODM3bDQuNzI1MiA4LjE4OWMuNDA5NC43MTA3IDEuNDE2NiAxLjI5NDMgMi4yNDAyIDEuMjk0M2g5LjQ1NWMuODE5IDAgMS44MjYtLjU4MzYgMi4yNDAyLTEuMjk0Mmw0LjcyNTItOC4xODljLjQwOTUtLjcxMDcuNDA5NS0xLjg3MzIgMC0yLjU4Mzh6TTEwLjk3NjMgNS43NTQ3YzAtLjUzNjUuNDM3Ny0uOTc0Mi45NzQyLS45NzQycy45NzQyLjQzNzcuOTc0Mi45NzQydjUuODIxN2MwIC41MzY2LS40Mzc3Ljk3NDItLjk3NDIuOTc0MnMtLjk3NDItLjQzNzYtLjk3NDItLjk3NDJ6bS45NzQyIDEyLjQyOTRjLTMuNjQyNyAwLTYuNjA3Ny0yLjk2NS02LjYwNzctNi42MDc3LjAwNDctMi4wODk2Ljk5My00LjA1MjEgMi42Njg1LTUuMzA0YS44NjU3Ljg2NTcgMCAwIDEgMS4yMTQyLjE3ODguODY1Ny44NjU3IDAgMCAxLS4xNzg4IDEuMjE0M2MtMi4xNjAyIDEuNjA0OC0yLjYxMiA0LjY1OTItMS4wMDcyIDYuODE5NCAxLjYwNDkgMi4xNjAzIDQuNjU5MyAyLjYxMiA2LjgxOTUgMS4wMDcyIDEuMjM3OC0uOTE3NyAxLjk2NzMtMi4zNzIgMS45NjczLTMuOTE1N2E0Ljg5NzIgNC44OTcyIDAgMCAwLTEuOTg2MS0zLjkyNWMtLjM4Ni0uMjgyNC0uNDY2LS44Mjg0LS4xODM2LTEuMjE0My4yODI0LS4zODYuODI4My0uNDY2IDEuMjE0My0uMTgzNSAxLjY4OTUgMS4yNDcxIDIuNjgyNiAzLjIyMzggMi42ODczIDUuMzIyOCAwIDMuNjQ3NC0yLjk2NSA2LjYwNzctNi42MDc3IDYuNjA3N3oiLz48L3N2Zz4=" x="650" y="440" width="34" height="34"/>
+  <text x="692" y="464" class="brand">스프링 부트</text>
+  <text x="115" y="558" class="boxlbl">웹 브라우저</text>
+  <text x="770" y="504" class="title">스프링 컨테이너</text>
+  <text x="660" y="552" class="oval">healthController</text>
+  <text x="660" y="622" class="oval">JSON 변환 (Jackson)</text>
+  <text x="766" y="540" class="codeGray">@GetMapping("/api/health")</text>
+  <text x="766" y="586" class="codeBlue">return Map.of("status","UP")</text>
+  <text x="766" y="620" class="codeGray">HttpMessageConverter 처리</text>
+  <text x="441" y="570" class="boxlbl">내장</text>
+  <text x="441" y="594" class="boxlbl">톰캣 서버</text>
+  <text x="275" y="536" class="smaller">localhost:8080/api/health</text>
+  <text x="275" y="606" class="smaller">JSON (응답)  {"status":"UP"}</text>
+</svg>

@@ -4,6 +4,15 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 
 좌석 예매 과정에서 발생할 수 있는 동시성 문제를 다루고, 테스트, CI, 보안 스캔, Docker 기반 개발 환경까지 구성하는 것을 목표로 합니다.
 
+<details>
+<summary>Frontend / Backend 구조</summary>
+
+![Frontend / Backend 구조](docs/assets/structure.svg)
+
+> 실제 코드 기준의 요청 흐름도이며, 구조가 바뀌면 [generate-structure.mjs](docs/assets/source/generate-structure.mjs)로 갱신한다.
+
+</details>
+
 ## 프로젝트 목표
 
 - React와 Spring Boot REST API 연동
