@@ -4,6 +4,50 @@
 
 Milestone 3 (Frontend 기초)의 첫 번째 이슈이며, 이번 이슈에서 처음으로 `frontend/` 디렉토리를 생성한다.
 
+## 0. Vite, React, TypeScript 생성/실행 그림
+
+```mermaid
+flowchart TD
+    A["1. npm create vite@latest frontend<br/>프로젝트 생성 명령"] --> B["2. create-vite<br/>Vite 프로젝트 뼈대 생성 도구"]
+    B --> C["3. react-ts 템플릿<br/>React + TypeScript 기본 구조 선택"]
+    C --> D["4. frontend/ 디렉토리<br/>새 Frontend 프로젝트 위치"]
+    D --> E["5. package.json<br/>프로젝트 정보, scripts, 패키지 목록"]
+    E --> F["6. npm install<br/>필요한 패키지 설치 명령"]
+    F --> G["7. node_modules/<br/>설치된 패키지 실제 파일"]
+    F --> H["8. package-lock.json<br/>설치 버전 고정 기록"]
+    E --> I["9. npm run dev<br/>개발 서버 실행 명령"]
+    I --> J["10. Vite dev server<br/>브라우저용 코드 변환과 새로고침"]
+    J --> K["11. index.html<br/>브라우저가 처음 읽는 파일"]
+    K --> L["12. src/main.tsx<br/>React 앱 시작점"]
+    L --> M["13. react-dom/client<br/>React 컴포넌트를 DOM에 연결"]
+    M --> N["14. src/App.tsx<br/>실제 첫 화면 컴포넌트"]
+    N --> O["15. React<br/>컴포넌트 방식으로 화면 생성"]
+    E --> P["16. TypeScript<br/>.ts, .tsx 타입 검사"]
+    E --> Q["17. @vitejs/plugin-react<br/>Vite에서 React 코드 처리"]
+    E --> R["18. ESLint<br/>코드 오류와 스타일 점검"]
+```
+
+그림은 `1 -> 18` 순서로 읽으면 된다. `npm create vite@latest frontend -- --template react-ts`를 실행하면 `create-vite`가 `frontend/` 폴더에 React + TypeScript 프로젝트 뼈대를 만든다. 그 다음 `npm install`로 `package.json`에 적힌 패키지를 설치하고, `npm run dev`로 Vite 개발 서버를 켠다. 브라우저는 `index.html`을 읽고, `main.tsx`가 `App.tsx`를 `#root`에 렌더링하면서 첫 화면이 열린다.
+
+1. `npm create vite@latest frontend`: `frontend/` 프로젝트를 새로 만드는 시작 명령이다.
+2. `create-vite`: Vite가 제공하는 프로젝트 생성 도구다. Spring Initializr처럼 기본 뼈대를 만들어 준다.
+3. `--template react-ts`: React와 TypeScript를 함께 쓰는 템플릿을 선택한다.
+4. `frontend/`: 이번 이슈에서 새로 생기는 Frontend 루트 디렉토리다.
+5. `package.json`: npm scripts와 사용할 패키지 이름을 기록하는 중심 파일이다.
+6. `npm install`: `package.json`을 보고 실제 패키지를 내려받는다.
+7. `node_modules/`: 내려받은 패키지가 저장되는 폴더다. 직접 수정하거나 커밋하지 않는다.
+8. `package-lock.json`: 설치된 패키지의 정확한 버전을 잠그는 자동 생성 파일이다.
+9. `npm run dev`: `package.json`의 `dev` script를 실행한다.
+10. `Vite dev server`: 코드를 브라우저가 읽을 수 있게 변환하고, 수정 사항을 빠르게 반영한다.
+11. `index.html`: 브라우저가 처음 여는 HTML이며, React가 들어갈 `#root`가 있다.
+12. `src/main.tsx`: React 앱을 시작하고 `App` 컴포넌트를 연결하는 파일이다.
+13. `react-dom/client`: React 컴포넌트를 실제 브라우저 DOM에 붙이는 패키지다.
+14. `src/App.tsx`: 첫 화면을 담당하는 최상위 React 컴포넌트다.
+15. `react`: 컴포넌트 방식으로 화면을 만들 때 사용하는 핵심 패키지다.
+16. `typescript`: `.ts`, `.tsx` 코드의 타입을 검사해 실수를 줄인다.
+17. `@vitejs/plugin-react`: Vite가 React 문법과 빠른 새로고침을 처리하게 해 주는 패키지다.
+18. `eslint`: 코드 문제를 미리 찾기 위한 린터다. 세부 정리는 Issue #7에서 이어간다.
+
 ## 목적
 
 Vite + React + TypeScript 기반의 Frontend 기본 프로젝트를 생성하고, 최소 실행 가능한 화면을 띄운다.

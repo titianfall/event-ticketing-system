@@ -2,6 +2,46 @@
 
 이 문서는 Issue #5를 진행하면서 GitHub Actions로 Backend 테스트를 자동 실행하는 흐름을 이해하기 위한 학습 노트다.
 
+## 0. GitHub Actions Backend CI 동작 그림
+
+```mermaid
+flowchart TD
+    A["1. git push 또는 Pull Request<br/>CI 실행 이벤트 발생"] --> B["2. GitHub Actions<br/>저장소 workflow 감지"]
+    B --> C["3. .github/workflows/backend-ci.yml<br/>Backend CI 설정 파일"]
+    C --> D["4. on<br/>pull_request, push 조건 확인"]
+    D --> E["5. backend-test job<br/>Backend 테스트 작업 시작"]
+    E --> F["6. ubuntu-latest<br/>Linux runner 준비"]
+    F --> G["7. actions/checkout@v4<br/>저장소 코드 내려받기"]
+    G --> H["8. actions/setup-java@v4<br/>Java 17 설치"]
+    H --> I["9. cache: gradle<br/>Gradle 의존성 캐시"]
+    I --> J["10. chmod +x gradlew<br/>Linux 실행 권한 부여"]
+    J --> K["11. working-directory: backend<br/>Backend 폴더에서 명령 실행"]
+    K --> L["12. ./gradlew test<br/>CI에서 Backend 테스트 실행"]
+    L --> M["13. build.gradle<br/>테스트 task와 의존성 사용"]
+    M --> N["14. spring-boot-starter-test<br/>JUnit/Spring Test 패키지 사용"]
+    N --> O["15. TicketingApplicationTests<br/>contextLoads 테스트 실행"]
+    O --> P["16. GitHub Checks<br/>성공/실패 결과 표시"]
+```
+
+그림은 `1 -> 16` 순서로 읽으면 된다. 브랜치에 push하거나 PR을 만들면 GitHub Actions가 `.github/workflows/backend-ci.yml`을 읽는다. workflow는 Ubuntu runner를 준비하고, `actions/checkout`으로 코드를 받고, `actions/setup-java`로 Java 17을 설치한 뒤 `backend` 디렉토리에서 `./gradlew test`를 실행한다. 로컬에서 수동으로 하던 Backend 테스트를 GitHub가 대신 실행하고 Checks 화면에 결과를 남기는 흐름이다.
+
+1. `git push 또는 Pull Request`: GitHub Actions가 시작되는 트리거다.
+2. `GitHub Actions`: GitHub에서 workflow를 실행해 주는 자동화 기능이다.
+3. `.github/workflows/backend-ci.yml`: Backend CI 작업을 정의하는 YAML 파일이다.
+4. `on`: 어떤 이벤트에서 CI를 실행할지 정하는 영역이다.
+5. `backend-test job`: Backend 테스트를 실행하는 하나의 작업 단위다.
+6. `ubuntu-latest`: GitHub가 제공하는 Linux 실행 환경이다.
+7. `actions/checkout@v4`: CI runner에 저장소 코드를 내려받는 공식 action이다.
+8. `actions/setup-java@v4`: CI runner에 Java를 설치하는 공식 action이다.
+9. `cache: gradle`: Gradle 의존성 다운로드 시간을 줄이는 캐시 설정이다.
+10. `chmod +x gradlew`: Linux에서 Gradle Wrapper를 실행할 수 있게 권한을 준다.
+11. `working-directory: backend`: 명령을 `backend/` 폴더 기준으로 실행하게 한다.
+12. `./gradlew test`: CI에서 실행하는 Backend 테스트 명령이다.
+13. `build.gradle`: Gradle이 테스트 task와 의존성 정보를 읽는 파일이다.
+14. `spring-boot-starter-test`: JUnit과 Spring Test를 제공하는 테스트 패키지 묶음이다.
+15. `TicketingApplicationTests`: CI에서 실제로 실행되는 기본 Spring Boot 테스트다.
+16. `GitHub Checks`: PR 또는 commit 화면에서 CI 성공/실패를 보여주는 결과 화면이다.
+
 ## 목적
 
 GitHub Actions workflow를 만들어서 Pull Request 또는 push 시 Backend 테스트가 자동으로 실행되게 한다.

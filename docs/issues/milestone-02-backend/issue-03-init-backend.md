@@ -2,6 +2,52 @@
 
 이 문서는 Issue #3을 진행하면서 생성한 Spring Boot backend 기본 구조와 실행 흐름을 이해하기 위한 학습 노트다.
 
+## 0. Spring Boot Backend 생성/실행 그림
+
+```mermaid
+flowchart TD
+    A["1. start.spring.io<br/>Spring Boot 프로젝트 생성 시작"] --> B["2. Gradle - Groovy<br/>빌드 도구 선택"]
+    B --> C["3. Java 17<br/>Backend 실행 기준 JDK"]
+    C --> D["4. Spring Web<br/>HTTP API용 의존성 선택"]
+    D --> E["5. backend/ 디렉토리<br/>프로젝트 루트 아래 배치"]
+    E --> F["6. build.gradle<br/>플러그인과 의존성 기록"]
+    F --> G["7. gradlew.bat<br/>Windows Gradle 실행 파일"]
+    G --> H["8. .\\gradlew.bat bootRun<br/>Backend 서버 실행 명령"]
+    H --> I["9. Spring Boot Gradle Plugin<br/>bootRun 실행 지원"]
+    I --> J["10. spring-boot-starter-web<br/>Web 서버와 MVC 기능 제공"]
+    J --> K["11. Embedded Tomcat<br/>내장 WAS로 8080 포트 실행"]
+    H --> L["12. TicketingApplication.java<br/>애플리케이션 시작 클래스"]
+    L --> M["13. @SpringBootApplication<br/>자동 설정과 컴포넌트 스캔 시작"]
+    M --> N["14. com.example.ticketing<br/>기본 패키지"]
+    N --> O["15. HealthController.java<br/>상태 확인 API 컨트롤러"]
+    O --> P["16. @RestController<br/>JSON/문자 응답용 컨트롤러 등록"]
+    P --> Q["17. @GetMapping('/api/health')<br/>Health API 경로 연결"]
+    Q --> R["18. GET /api/health<br/>브라우저 또는 curl로 확인"]
+    R --> S["19. OK 응답<br/>Backend 실행 성공 확인"]
+```
+
+그림은 `1 -> 19` 순서로 읽으면 된다. Spring Initializr에서 Gradle, Java 17, Spring Web을 선택해 프로젝트를 만들고, 그 결과를 `backend/`에 배치한다. 이후 `.\gradlew.bat bootRun`을 실행하면 Gradle이 Spring Boot를 시작하고, `spring-boot-starter-web`이 내장 Tomcat과 MVC 기능을 제공한다. `TicketingApplication`에서 시작된 컴포넌트 스캔이 `HealthController`를 찾고, `GET /api/health` 요청에 응답하면 Backend 기본 실행이 성공한 것이다.
+
+1. `start.spring.io`: Spring Boot 프로젝트 기본 뼈대를 만드는 웹 도구다.
+2. `Gradle - Groovy`: 이 프로젝트의 Backend 빌드 도구와 설정 문법이다.
+3. `Java 17`: Backend 컴파일과 실행 기준이 되는 JDK 버전이다.
+4. `Spring Web`: HTTP API와 내장 서버를 쓰기 위해 선택하는 의존성이다.
+5. `backend/`: Spring Boot 프로젝트가 들어가는 Backend 루트 디렉토리다.
+6. `build.gradle`: Spring Boot 플러그인, Java 버전, 의존성을 기록한다.
+7. `gradlew.bat`: Windows에서 프로젝트 내 Gradle Wrapper를 실행하는 파일이다.
+8. `.\gradlew.bat bootRun`: Backend 서버를 로컬에서 실행하는 명령이다.
+9. `Spring Boot Gradle Plugin`: `bootRun` 같은 Spring Boot 전용 Gradle 작업을 제공한다.
+10. `spring-boot-starter-web`: Web MVC, 내장 Tomcat, JSON 처리 기본 구성을 묶어 제공한다.
+11. `Embedded Tomcat`: 별도 서버 설치 없이 Spring Boot 앱을 `8080` 포트에서 실행한다.
+12. `TicketingApplication.java`: `main()` 메서드가 있는 애플리케이션 시작 파일이다.
+13. `@SpringBootApplication`: 자동 설정, 컴포넌트 스캔, 설정 클래스를 한 번에 켠다.
+14. `com.example.ticketing`: 이 패키지 아래의 Controller, Service 등을 스캔하는 기준이다.
+15. `HealthController.java`: 서버가 살아 있는지 확인하는 API를 담당한다.
+16. `@RestController`: 이 클래스를 HTTP 요청을 처리하는 컨트롤러로 등록한다.
+17. `@GetMapping("/api/health")`: `GET /api/health` 요청을 메서드에 연결한다.
+18. `GET /api/health`: 브라우저, curl, Postman 등으로 실행 확인하는 요청이다.
+19. `OK 응답`: 이번 이슈의 최소 성공 기준이다.
+
 ## 목적
 
 Spring Boot Backend 기본 프로젝트를 생성하고, 최소 실행 가능한 API 서버 구조를 만든다.

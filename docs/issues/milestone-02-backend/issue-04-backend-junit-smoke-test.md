@@ -2,6 +2,46 @@
 
 이 문서는 Issue #4를 진행하면서 Backend 테스트 실행 흐름과 Spring Boot 기본 테스트를 이해하기 위한 학습 노트다.
 
+## 0. Gradle, JUnit, Spring Boot Test 동작 그림
+
+```mermaid
+flowchart TD
+    A["1. cd backend<br/>Backend 프로젝트로 이동"] --> B["2. .\\gradlew.bat test<br/>테스트 실행 명령"]
+    B --> C["3. Gradle Wrapper<br/>프로젝트 기준 Gradle 실행"]
+    C --> D["4. build.gradle<br/>테스트 의존성과 task 설정 확인"]
+    D --> E["5. spring-boot-starter-test<br/>JUnit, AssertJ, Spring Test 묶음"]
+    C --> F["6. test task<br/>테스트 클래스 탐색"]
+    F --> G["7. JUnit Platform<br/>JUnit 5 테스트 실행 엔진"]
+    G --> H["8. TicketingApplicationTests.java<br/>실제 테스트 클래스"]
+    H --> I["9. @Test<br/>테스트 메서드 표시"]
+    H --> J["10. @SpringBootTest<br/>Spring Boot 테스트 환경 로딩"]
+    J --> K["11. ApplicationContext<br/>Bean과 설정을 담는 컨테이너"]
+    K --> L["12. Component Scan<br/>com.example.ticketing 하위 탐색"]
+    L --> M["13. TicketingApplication<br/>테스트용 애플리케이션 시작 기준"]
+    L --> N["14. HealthController<br/>스캔되는 Controller Bean"]
+    I --> O["15. contextLoads()<br/>컨텍스트 로딩 성공 여부 확인"]
+    O --> P["16. 테스트 성공/실패<br/>Gradle 결과 출력"]
+```
+
+그림은 `1 -> 16` 순서로 읽으면 된다. `backend` 디렉토리에서 `.\gradlew.bat test`를 실행하면 Gradle이 `build.gradle`의 테스트 설정과 의존성을 읽는다. `spring-boot-starter-test`에 포함된 JUnit 5가 `TicketingApplicationTests`를 실행하고, `@SpringBootTest`가 Spring Boot `ApplicationContext`를 로딩한다. `contextLoads()`가 실패하지 않으면 현재 Backend 기본 설정이 테스트 환경에서도 정상이라는 뜻이다.
+
+1. `cd backend`: Gradle Wrapper와 `build.gradle`이 있는 Backend 디렉토리로 이동한다.
+2. `.\gradlew.bat test`: Windows에서 Backend 테스트를 실행하는 명령이다.
+3. `Gradle Wrapper`: PC에 설치된 Gradle 버전에 덜 의존하고 프로젝트 기준으로 Gradle을 실행한다.
+4. `build.gradle`: 테스트에 필요한 의존성과 `test` task 설정을 확인하는 파일이다.
+5. `spring-boot-starter-test`: JUnit 5, Spring Test, AssertJ 등 테스트 도구를 묶은 의존성이다.
+6. `test task`: Gradle이 테스트 클래스를 찾고 실행하는 작업이다.
+7. `JUnit Platform`: JUnit 5 테스트를 실제로 실행하는 기반이다.
+8. `TicketingApplicationTests.java`: 이번 이슈에서 확인하는 기본 테스트 클래스다.
+9. `@Test`: 해당 메서드를 테스트 메서드로 표시한다.
+10. `@SpringBootTest`: Spring Boot 애플리케이션 테스트 환경을 통째로 로딩한다.
+11. `ApplicationContext`: Spring Bean과 설정이 올라가는 컨테이너다.
+12. `Component Scan`: `com.example.ticketing` 아래의 컴포넌트를 자동으로 찾는다.
+13. `TicketingApplication`: 테스트에서 Spring Boot 앱을 시작할 기준 클래스다.
+14. `HealthController`: Component Scan으로 등록되는 Controller Bean 예시다.
+15. `contextLoads()`: 컨텍스트가 문제 없이 뜨는지 확인하는 smoke test다.
+16. `테스트 성공/실패`: Gradle이 최종 테스트 결과를 터미널에 출력한다.
+
 ## 목적
 
 Backend에서 JUnit 테스트를 실행하는 흐름을 익힌다.
