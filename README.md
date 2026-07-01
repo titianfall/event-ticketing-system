@@ -20,49 +20,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 
 ## 기술 스택
 
-### Frontend
-
-- React
-- TypeScript
-- Vite
-- Axios
-- React Router
-- ESLint
-- Prettier
-
-### Backend
-
-- Java 17+
-- Spring Boot
-- Spring Data JPA
-- Spring Security
-- Validation
-- JUnit 5
-- Mockito
-- AssertJ
-- Testcontainers
-- Jacoco
-- Swagger / OpenAPI
-
-### Database / Infra
-
-- MySQL
-- Redis
-- Kafka
-- Kafka UI
-- Docker
-- Docker Compose
-
-### CI / Quality / Security
-
-- GitHub Actions
-- npm audit
-- Trivy
-- OWASP Dependency-Check
-- CodeQL
-- SonarCloud or SonarQube
-- Dependabot
-- Renovate
+자세한 기술 스택은 [기술 스택 문서](stack.md)에서 관리합니다.
 
 ## 주요 기능
 
@@ -128,14 +86,12 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 ## 문서
 
 - [에이전트 작업 규칙](AGENTS.md)
+- [기술 스택](stack.md)
+- [실행 방법](run.md)
 - [로드맵 인덱스](docs/roadmap.md)
 - [로드맵 상세 디렉토리](docs/roadmap/)
 - [최종 디렉토리 구조](docs/project-structure.md)
 
 ## 실행 방법
 
-### Backend 실행
-
-```powershell
-cd backend
-.\gradlew.bat bootRun
+자세한 실행 방법은 [실행 방법 문서](run.md)에서 관리합니다.
