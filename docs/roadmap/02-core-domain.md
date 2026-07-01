@@ -1,5 +1,48 @@
 # 02. Core Domain
 
+## Backend 디렉토리 구조 원칙
+
+Milestone 5부터 실제 핵심 도메인을 구현할 때는 기능 단위 패키지 안에 계층을 나누어 생성한다.
+
+기본 구조:
+
+```text
+feature/
+├── controller/
+├── service/
+├── domain/
+└── repository/
+```
+
+예시:
+
+```text
+member/
+├── controller/
+├── service/
+├── domain/
+└── repository/
+
+event/
+├── controller/
+├── service/
+├── domain/
+└── repository/
+
+reservation/
+├── controller/
+├── service/
+├── domain/
+└── repository/
+```
+
+- `controller`: HTTP 요청과 응답을 담당한다.
+- `service`: 비즈니스 흐름을 담당한다.
+- `domain`: Entity, 값 객체, 도메인 규칙을 둔다.
+- `repository`: 저장소 접근 계약과 구현을 둔다.
+- `global`, `common`, `config`, `exception` 같은 공통 구조는 도메인 계층으로 억지로 나누지 않는다.
+- `HealthController`처럼 단순 상태 확인용 API는 `global/common`에 가볍게 둘 수 있다.
+
 ## Milestone 5. 회원과 인증
 
 | Issue | 제목 | 완료 조건 | 커밋 예시 |
