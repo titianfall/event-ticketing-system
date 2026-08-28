@@ -18,7 +18,10 @@ repositories {
 }
 
 dependencies {
+//	developmentOnly 'org.springframework.book:spring-boot-docker-compose'
 	runtimeOnly 'org.postgresql:postgresql'
+
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.11.0'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -26,7 +29,7 @@ dependencies {
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-validation-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
@@ -36,6 +39,15 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok'
 }
 
+// DB 비밀번호는 저장소에 두지 않는다.
+// 로컬은 ~/.gradle/gradle.properties, CI는 step의 환경변수에서 읽는다.
+def dbPassword = findProperty('POSTGRES_PASSWORD') ?: System.getenv('POSTGRES_PASSWORD') ?: ''
+
 tasks.named('test') {
 	useJUnitPlatform()
+	environment 'POSTGRES_PASSWORD', dbPassword
+}
+
+tasks.named('bootRun') {
+	environment 'POSTGRES_PASSWORD', dbPassword
 }
