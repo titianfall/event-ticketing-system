@@ -18,7 +18,7 @@ CI 실습 이슈는 사용자가 먼저 YAML 또는 설정을 작성하고, Code
 | #33 | Backend CI 개선 실습 | `.github/workflows/backend-ci.yml` | Backend CI에서 test와 build가 실행된다. | `ci: improve backend ci workflow` |
 | #34 | Frontend CI 개선 실습 | `.github/workflows/frontend-ci.yml` | Frontend CI에서 lint, test, build, audit가 실행된다. | `ci: improve frontend ci workflow` |
 | #35 | Dockerfile 작성 | `backend/Dockerfile`, `frontend/Dockerfile` | Backend와 Frontend Docker image build가 성공한다. | `chore: add dockerfiles` |
-| #36 | Docker CI 개선 실습 | `.github/workflows/docker.yml` | CI에서 Dockerfile build와 compose config 검증이 실행된다. | `ci: add docker build workflow` |
+| #36 | Docker CI 개선 실습 | `.github/workflows/docker-ci.yml` | CI에서 Dockerfile build와 compose config 검증이 실행된다. | `ci: add docker build workflow` |
 
 ## Milestone 11. 동시성
 

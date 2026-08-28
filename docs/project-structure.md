@@ -48,7 +48,7 @@ ticketing-platform/
 │   └── workflows/
 │       ├── backend-ci.yml
 │       ├── frontend-ci.yml
-│       ├── docker.yml
+│       ├── docker-ci.yml
 │       ├── security.yml
 │       ├── codeql.yml
 │       └── deploy.yml
