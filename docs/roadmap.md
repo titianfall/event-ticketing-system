@@ -25,12 +25,15 @@
 
 - 완료: Milestone 1. 프로젝트 초기화
 - 완료: Milestone 2. Backend 기초
-- 진행 중: Milestone 3. Frontend 기초
-- 완료 이슈: Issue #6. React Frontend 생성
-- 다음 이슈: Issue #7. Frontend npm scripts와 테스트 기초
+- 진행 중: Milestone 3. Frontend 기초 — Issue #6, #7 완료, Issue #8 남음
+- 진행 중: Milestone 4. 로컬 개발 환경과 JPA — Issue #9 진행 중
+- 다음 이슈: Issue #9. PostgreSQL Docker Compose 구성
+
+스택 변경(PostgreSQL, Java 21, JavaScript)을 반영하면서 Backend 재생성과 Frontend 전환을 먼저 처리했고,
+그 과정에서 Issue #8보다 Issue #9를 앞서 진행했다. 배경은 [기술 선택 기록](decision-log.md)에 있다.
 
 ## 추천 커밋 메시지
 
 ```bash
-test: add frontend test script
+chore: add postgresql docker compose setup
 ```

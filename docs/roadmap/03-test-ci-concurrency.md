@@ -7,7 +7,7 @@
 | #29 | Service 단위 테스트와 Mockito 적용 | DB 없이 Service 단위 테스트가 실행된다. | `test: add service unit tests` |
 | #30 | Controller 테스트 작성 | 주요 Controller 테스트가 통과한다. | `test: add controller tests` |
 | #31 | Jacoco 적용 | Jacoco Report가 생성된다. | `test: add jacoco coverage report` |
-| #32 | Testcontainers MySQL 적용 | 로컬 MySQL 없이 통합 테스트가 실행된다. | `test: add mysql testcontainers integration tests` |
+| #32 | Testcontainers PostgreSQL 적용 | 로컬 PostgreSQL 없이 통합 테스트가 실행된다. | `test: add postgresql testcontainers integration tests` |
 
 ## Milestone 10. CI 실습 확장
 

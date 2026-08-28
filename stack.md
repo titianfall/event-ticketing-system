@@ -5,7 +5,6 @@
 ## Frontend
 
 - React
-- TypeScript
 - Vite
 - Axios
 - React Router
@@ -14,7 +13,7 @@
 
 ## Backend
 
-- Java 17+
+- Java 21
 - Spring Boot
 - Spring Data JPA
 - Spring Security
@@ -28,7 +27,8 @@
 
 ## Database / Infra
 
-- MySQL
+- PostgreSQL
+- Supabase (배포용 PostgreSQL 호스팅)
 - Redis
 - Kafka
 - Kafka UI

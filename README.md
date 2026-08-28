@@ -1,6 +1,6 @@
 # Ticketing Platform
 
-React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
+React, Spring Boot, JPA, PostgreSQL 기반의 티켓 예매 시스템입니다.
 
 좌석 예매 과정에서 발생할 수 있는 동시성 문제를 다루고, 테스트, CI, 보안 스캔, Docker 기반 개발 환경까지 구성하는 것을 목표로 합니다.
 
@@ -16,7 +16,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 ## 프로젝트 목표
 
 - React와 Spring Boot REST API 연동
-- Spring Boot, JPA, MySQL 기반 도메인 설계
+- Spring Boot, JPA, PostgreSQL 기반 도메인 설계
 - 좌석 예매 동시성 문제 해결
 - JUnit, Mockito, Testcontainers 기반 테스트 작성
 - GitHub Actions 기반 CI 자동화
@@ -100,6 +100,7 @@ React, Spring Boot, JPA, MySQL 기반의 티켓 예매 시스템입니다.
 - [로드맵 인덱스](docs/roadmap.md)
 - [로드맵 상세 디렉토리](docs/roadmap/)
 - [최종 디렉토리 구조](docs/project-structure.md)
+- [기술 선택 기록](docs/decision-log.md)
 
 ## 실행 방법
 

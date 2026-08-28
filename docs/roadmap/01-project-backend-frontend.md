@@ -107,7 +107,7 @@ ci: add initial backend ci workflow
 
 ### Issue #6. React Frontend 생성
 
-목표: Vite + React + TypeScript 프로젝트를 만든다.
+목표: Vite + React 프로젝트를 만든다.
 
 완료 조건:
 
@@ -159,27 +159,27 @@ ci: add initial frontend ci workflow
 
 ## Milestone 4. 로컬 개발 환경과 JPA
 
-### Issue #9. MySQL Docker Compose 구성
+### Issue #9. PostgreSQL Docker Compose 구성
 
-목표: MySQL을 Docker Compose로 실행한다.
+목표: PostgreSQL을 Docker Compose로 실행한다.
 
 완료 조건:
 
-- `docker compose up -d`로 MySQL이 실행된다.
+- `docker compose up -d`로 PostgreSQL이 실행된다.
 
 커밋 예시:
 
 ```bash
-chore: add mysql docker compose setup
+chore: add postgresql docker compose setup
 ```
 
 ### Issue #10. Spring Data JPA 연결
 
-목표: Backend와 MySQL을 JPA로 연결한다.
+목표: Backend와 PostgreSQL을 JPA로 연결한다.
 
 완료 조건:
 
-- Backend 실행 시 MySQL 연결이 성공한다.
+- Backend 실행 시 PostgreSQL 연결이 성공한다.
 
 커밋 예시:
 

@@ -18,9 +18,9 @@
 | `backend/` | Issue #3. Spring Boot Backend 생성 |
 | `frontend/` | Issue #6. React Frontend 생성 |
 | `.github/workflows/` | Issue #5. Backend CI 첫 실습 |
-| `docker-compose.yml` | Issue #9. MySQL Docker Compose 구성 |
-| `.env.example` | Issue #9. MySQL Docker Compose 구성 |
-| `scripts/` | Issue #9. MySQL Docker Compose 구성 |
+| `docker-compose.yml` | Issue #9. PostgreSQL Docker Compose 구성 |
+| `.env.example` | Issue #9. PostgreSQL Docker Compose 구성 |
+| `scripts/` | 미정. 필요해지는 이슈에서 생성 |
 | `backend/Dockerfile` | Issue #35. Dockerfile 작성 |
 | `frontend/Dockerfile` | Issue #35. Dockerfile 작성 |
 | `renovate.json` | Issue #57. Renovate 설정 |
@@ -31,6 +31,7 @@
 | `docs/testing.md` | Issue #61. testing.md 작성 |
 | `docs/ci-cd.md` | Issue #62. ci-cd.md 작성 |
 | `docs/security.md` | Issue #63. security.md 작성 |
+| `docs/decision-log.md` | Issue #9. PostgreSQL Docker Compose 구성 |
 
 ## 최종 목표 구조
 
@@ -126,12 +127,11 @@ ticketing-platform/
 │   ├── package.json
 │   ├── package-lock.json
 │   ├── Dockerfile
-│   ├── vite.config.ts
-│   ├── tsconfig.json
+│   ├── vite.config.js
 │   ├── index.html
 │   └── src/
-│       ├── main.tsx
-│       ├── App.tsx
+│       ├── main.jsx
+│       ├── App.jsx
 │       ├── api/
 │       ├── components/
 │       ├── pages/
@@ -142,7 +142,6 @@ ticketing-platform/
 │       ├── routes/
 │       ├── hooks/
 │       ├── stores/
-│       ├── types/
 │       └── styles/
 │
 ├── docs/

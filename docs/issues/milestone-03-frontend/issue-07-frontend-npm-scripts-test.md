@@ -1,5 +1,7 @@
 # Issue #7. Frontend npm scripts와 테스트 기초
 
+> 이 문서는 작성 당시의 학습 노트다. 이후 Frontend에서 TypeScript를 제거하고 순수 JavaScript로 전환했으므로 `.tsx`, `vite.config.ts`, `tsc -b` 관련 내용은 현재 코드와 다르다. 배경은 [기술 선택 기록](../../decision-log.md)에 있다.
+
 ## 0. React, TypeScript, Vitest 동작 그림
 
 ```mermaid

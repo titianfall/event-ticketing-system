@@ -1,5 +1,7 @@
 # Issue #6. React Frontend 생성
 
+> 이 문서는 작성 당시의 학습 노트다. 이후 Frontend에서 TypeScript를 제거하고 순수 JavaScript로 전환했으므로 `.tsx`, `tsconfig` 관련 내용은 현재 코드와 다르다. 배경은 [기술 선택 기록](../../decision-log.md)에 있다.
+
 이 문서는 Issue #6을 진행하면서 만들 React Frontend 기본 구조와 실행 흐름을 이해하기 위한 학습 노트다.
 
 Milestone 3 (Frontend 기초)의 첫 번째 이슈이며, 이번 이슈에서 처음으로 `frontend/` 디렉토리를 생성한다.
