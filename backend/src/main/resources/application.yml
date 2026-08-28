@@ -1,6 +1,19 @@
 spring:
-    application:
-        name: ticketing
+  application:
+    name: ticketing
 
+  datasource:
+    url: jdbc:postgresql://localhost:8001/${POSTGRES_DB:ticketing}
+    username: ${POSTGRES_USER:titanfall}
+    password: ${POSTGRES_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    
 server:
-    port: 8080
+  port: 8080
