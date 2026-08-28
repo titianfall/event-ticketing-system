@@ -47,14 +47,18 @@
 - Issue #1은 프로젝트의 첫 커밋이므로 기본 브랜치에서 로컬 커밋 준비까지만 진행한다.
 - Issue #1에서는 원격 push와 PR 생성을 진행하지 않는다.
 - Issue #2부터는 이슈마다 새 브랜치를 만든다.
-- 브랜치 이름은 `issue/{issue-number}-{short-name}` 형식을 사용한다.
+- 이슈 하나를 담는 브랜치는 `issue/{issue-number}-{short-name}` 형식을 사용한다.
 - 예: `issue/2-document-project-structure`, `issue/3-init-backend`, `issue/5-backend-ci`.
+- 마일스톤 전체를 담는 브랜치는 `milestone/{milestone-number}-{short-name}` 형식을 사용한다.
+- 예: `milestone/5-member-auth`.
 
 ### Pull Request 시작 시점
 
 - Issue #2부터 PR 흐름을 사용한다.
 - CI가 아직 없더라도 PR을 만들어 변경 범위, 커밋 메시지, 문서 변경을 리뷰하는 습관을 들인다.
-- PR 하나는 이슈 하나만 포함한다.
+- PR 경계는 이슈 개수가 아니라 저장소가 건강한 상태로 돌아오는 지점에서 끊는다.
+- 한 이슈만 merge하면 CI가 빨간 채로 기본 브랜치에 남는 경우, 초록으로 돌아오는 이슈까지 한 PR에 담는다.
+- 마일스톤 전체를 한 PR로 묶어도 된다. 대신 커밋은 이슈 단위로 나눈다.
 - PR 본문에는 목적, 변경 파일, 확인 방법, 다음 이슈를 적는다.
 
 ### CI 시작 시점
