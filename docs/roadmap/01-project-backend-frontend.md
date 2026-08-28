@@ -193,7 +193,7 @@ feat: configure spring data jpa
 
 진행 방식:
 
-- 사용자가 `.github/workflows/docker.yml` 초안을 작성한다.
+- 사용자가 `.github/workflows/docker-ci.yml` 초안을 작성한다.
 - Codex는 `docker compose config` 검증 흐름을 리뷰한다.
 
 완료 조건:

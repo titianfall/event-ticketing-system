@@ -1,0 +1,27 @@
+name: docker CI
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docker-compose.yml"
+      - ".env.example"
+      - ".github/workflows/docker-ci.yml"
+
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v7
+
+      - name: Prepare .env from example
+        run: cp .env.example .env
+
+      - name: Validate docker compose
+        run: docker compose config --quiet
