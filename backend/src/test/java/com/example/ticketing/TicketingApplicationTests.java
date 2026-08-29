@@ -32,8 +32,9 @@ class TicketingApplicationTests {
 
 		// then
 		resultActions
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.status").value("UP"));
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.code").value("SUCCESS"))
+				.andExpect(jsonPath("$.data.status").value("UP"));
 	}	
 
 }
