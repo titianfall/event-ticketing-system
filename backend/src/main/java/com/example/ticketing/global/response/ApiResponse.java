@@ -3,6 +3,9 @@ package com.example.ticketing.global.response;
 /**
  * 모든 API가 쓰는 공통 응답 형식.
  * record라 getter가 code(), message(), data()다.
+ *
+ * 성공: code="SUCCESS", message=null, data=요청 결과
+ * 실패: code=에러 코드명, message=에러 메시지, data=null
  */
 public record ApiResponse<T>(String code, String message, T data) {
 
