@@ -55,3 +55,7 @@ reports/
 # Generated files
 *.tmp
 *.temp
+
+# Postman (로컬 워크스페이스 캐시)
+.postman/
+backend/postman/

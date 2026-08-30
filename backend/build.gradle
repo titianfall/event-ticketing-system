@@ -21,6 +21,8 @@ dependencies {
 //	developmentOnly 'org.springframework.book:spring-boot-docker-compose'
 	runtimeOnly 'org.postgresql:postgresql'
 
+	// Spring Boot 4.1.1 BOM 관리 (버전 X)
+	implementation 'org.springframework.security:spring-security-crypto'
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.11.0'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

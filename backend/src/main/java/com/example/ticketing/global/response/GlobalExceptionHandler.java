@@ -7,6 +7,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +32,7 @@ public class GlobalExceptionHandler {
     /** 실패한 필드들을 한 줄로 합친다. 예: "email: 형식 오류, password: 8자 이상" */
     private String toMessage(List<FieldError> fieldErrors) {
         return fieldErrors.stream()
+                .sorted(Comparator.comparing(FieldError::getField)) // email, name, password 순 고정
                 // 필드 하나를 "이름: 메시지" 문자열로 바꾼다
                 .map(fieldError -> fieldError.getField() + ": " + fieldError.getDefaultMessage())
                 .collect(Collectors.joining(", ")); // 쉼표로 이어 붙인다
