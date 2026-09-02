@@ -79,7 +79,7 @@ React, Spring Boot, JPA, PostgreSQL 기반의 티켓 예매 시스템입니다.
 - [x] Milestone 2 Backend 기초
 - [x] Milestone 3 Frontend 기초
 - [x] Milestone 4 로컬 개발 환경과 JPA
-- [ ] Milestone 5 회원과 인증
+- [x] Milestone 5 회원과 인증
 - [ ] Milestone 6 공연과 좌석
 - [ ] Milestone 7 Frontend 화면 연동
 - [ ] Milestone 8 예매와 결제
