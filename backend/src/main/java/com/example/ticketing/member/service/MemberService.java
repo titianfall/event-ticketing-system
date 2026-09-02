@@ -4,6 +4,7 @@ import com.example.ticketing.global.response.BusinessException;
 import com.example.ticketing.global.response.ErrorCode;
 import com.example.ticketing.member.domain.Member;
 import com.example.ticketing.member.domain.MemberRole;
+import com.example.ticketing.member.dto.MemberResponse;
 import com.example.ticketing.member.dto.SignupRequest;
 import com.example.ticketing.member.repository.MemberRepository;
 import jakarta.validation.Valid;
@@ -43,5 +44,16 @@ public class MemberService {
         } catch(DataIntegrityViolationException e) {
             throw new BusinessException(ErrorCode.DUPLICATE_EMAIL);
         }
+    }
+
+    /**
+     * 내 정보 조회.
+     * 토큰은 유효한데 그 사이 회원이 지워졌다면 MEMBER_NOT_FOUND(404).
+     */
+    @Transactional(readOnly = true)
+    public MemberResponse findById(Long memberId) {
+        Member member = memberRepository.findById(memberId)
+                .orElseThrow(() -> new BusinessException(ErrorCode.MEMBER_NOT_FOUND));
+        return MemberResponse.from(member);
     }
 }

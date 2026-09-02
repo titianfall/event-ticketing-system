@@ -1,12 +1,14 @@
 package com.example.ticketing.member.controller;
 
 import com.example.ticketing.global.response.ApiResponse;
+import com.example.ticketing.member.dto.MemberResponse;
 import com.example.ticketing.member.dto.SignupRequest;
 import com.example.ticketing.member.dto.SignupResponse;
 import com.example.ticketing.member.service.MemberService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -31,5 +33,16 @@ public class MemberController {
     public ApiResponse<SignupResponse> signup(@Valid @RequestBody SignupRequest request) {
         Long memberId = memberService.signup(request);
         return ApiResponse.success(new SignupResponse(memberId));
+    }
+
+    /**
+     * 내 정보 조회. 인증이 필요한 엔드포인트.
+     * memberId는 JwtAuthenticationFilter가 SecurityContext에 넣어 둔 principal이다.
+     *
+     * 토큰 없음/불량 -> 필터를 지나 EntryPoint에서 401 UNAUTHORIZED
+     */
+    @GetMapping("/me")
+    public ApiResponse<MemberResponse> me(@AuthenticationPrincipal Long memberId) {
+        return ApiResponse.success(memberService.findById(memberId));
     }
 }
