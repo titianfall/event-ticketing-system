@@ -1,0 +1,23 @@
+package com.example.ticketing.auth.controller;
+
+import com.example.ticketing.auth.dto.LoginRequest;
+import com.example.ticketing.auth.dto.LoginResponse;
+import com.example.ticketing.auth.service.AuthService;
+import com.example.ticketing.global.response.ApiResponse;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
+
+    private final AuthService authService;
+
+    @PostMapping("/login")
+    public ApiResponse<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
+        return ApiResponse.success(authService.login(request));
+    }
+}

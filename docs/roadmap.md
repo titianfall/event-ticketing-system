@@ -27,7 +27,8 @@
 - 완료: Milestone 2. Backend 기초
 - 완료: Milestone 3. Frontend 기초
 - 완료: Milestone 4. 로컬 개발 환경과 JPA
-- 다음 이슈: Issue #12. 공통 응답과 예외 구조 작성
+- 완료: Milestone 5. 회원과 인증
+- 다음 이슈: Issue #16. Event Entity와 등록 API 구현
 
 스택 변경(PostgreSQL, Java 21, JavaScript)을 반영하면서 Backend 재생성과 Frontend 전환을 먼저 처리했고,
 그 과정에서 Issue #8보다 Issue #9, #10을 앞서 진행했다. 배경은 [기술 선택 기록](decision-log.md)에 있다.
@@ -35,5 +36,5 @@
 ## 추천 커밋 메시지
 
 ```bash
-ci: add docker compose validation workflow
+feat: implement event creation api
 ```

@@ -39,6 +39,24 @@ Issue #6의 원안은 Vite + React + TypeScript였으나 순수 JavaScript로 �
 - `npm run build`가 `tsc -b` 없이 `vite build` 단독으로 동작한다.
 - ESLint에서 TypeScript 파서를 걷어냈다. JSX 파싱을 그 파서가 대신 해주고 있었으므로, `parserOptions.ecmaFeatures.jsx`를 직접 켜야 한다.
 
+## 2026-09-02. Spring Security를 두 단계로 나눠 도입
+
+Issue #14(회원가입)에서 비밀번호 해시가 필요했다. `BCryptPasswordEncoder`는 `spring-boot-starter-security`에 들어 있는데, 이 스타터를 넣는 순간 자동 설정된 필터 체인이 모든 요청에 인증을 걸어 기존 `/api/health` 테스트가 깨진다.
+
+폐기한 안은 #14에서 스타터와 `SecurityFilterChain`을 한꺼번에 작성하는 것이다. 회원가입 이슈에 인증 설계가 딸려 들어와 범위가 커진다.
+
+선택은 #14에서 `spring-security-crypto`만 넣는 것이다. 이 모듈에는 `spring-security-config`와 `spring-security-web`이 없어서 필터 체인 자동 설정이 아예 켜지지 않는다. `PasswordEncoder` 빈만 쓰고 넘어갔고, 필터 체인은 인증이 실제로 필요해진 #15에서 `spring-boot-starter-security`와 함께 작성했다.
+
+`PasswordEncoderConfig`의 빈은 #15에서 그대로 재사용된다. 교체 비용은 없었다.
+
+## 2026-09-02. JWT 라이브러리로 jjwt 선택
+
+폐기한 안은 `spring-boot-starter-oauth2-resource-server`다. `JwtDecoder`/`JwtEncoder` 빈과 `oauth2ResourceServer()` DSL을 쓰면 커스텀 필터와 엔트리포인트를 거의 작성하지 않아도 된다.
+
+선택은 jjwt 0.12.6이다. 코드는 더 많지만 토큰 생성, 서명, 파싱과 `OncePerRequestFilter`를 직접 쓰는 편이 이 저장소의 학습 목적에 맞다.
+
+주의할 점이 하나 있다. `jjwt-jackson`은 Jackson 2를 끌어온다. 본체는 Boot 4라서 Jackson 3(`tools.jackson`)을 쓰므로 두 버전이 함께 있게 된다. jjwt 내부 직렬화에만 쓰여서 충돌하지 않는다.
+
 ## 2026-08-28. Issue #8보다 Issue #9를 먼저 진행
 
 스택 변경으로 Backend를 재생성하면서 JPA가 들어왔고, DB 없이는 `./gradlew test`가 실패하는 상태가 됐다. 이 상태를 오래 두지 않으려고 Issue #9를 앞당겼다.

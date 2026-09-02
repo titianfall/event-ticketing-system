@@ -2,6 +2,9 @@ spring:
   application:
     name: ticketing
 
+  config:
+    import: optional:file:./.env[.properties]
+
   datasource:
     url: jdbc:postgresql://localhost:8001/${POSTGRES_DB:ticketing}
     username: ${POSTGRES_USER:titanfall}
@@ -17,3 +20,7 @@ spring:
     
 server:
   port: 8080
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-seconds: 3600
